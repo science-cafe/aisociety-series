@@ -294,7 +294,7 @@ input,select,textarea,button{font:inherit}
 </div>
 <div role="tabpanel" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 24px; background: #F6F1E8; border: 1px solid #E8DDC6; border-radius: 20px; padding: 40px">
 <div>
-<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #4E6273; margin-bottom: 10px">Theme <span id="theme-num">1</span> of 5</div>
+<div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #4E6273; margin-bottom: 10px">Theme <span id="theme-num">1</span> of 6</div>
 <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 32px; line-height: 1.1; letter-spacing: -0.02em; margin: 0 0 14px; color: #033C5A" id="theme-label"></h3>
 <p style="margin: 0; color: #3F5566" id="theme-intro"></p>
 </div>
@@ -393,25 +393,53 @@ input,select,textarea,button{font:inherit}
 (function () {
   var data = [
       { id: 'learn', label: 'Learning & Education', intro: 'AI tutors, homework helpers and chatbots are already in students’ pockets. What should learning look like when answers are instant?', qs: [
-        'When you use AI to help with schoolwork, what does it do well, and where does it get in the way of actually learning?',
-        'What skills should every student have before using AI tools on their own?',
-        'If you could design a museum exhibit about AI for people your age, what would it teach?' ] },
+        'When should we use AI to help with learning tasks, and where does it get in the way of actually learning?',
+        'What skills should people have before using AI tools on their own?',
+        'Do you think the institutions of K-12 and/or higher education need to evolve in response to a world with AI? If so, how?'
+        // 'When you use AI to help with schoolwork, what does it do well, and where does it get in the way of actually learning?',
+        // 'What skills should every student have before using AI tools on their own?',
+        // 'If you could design a museum exhibit about AI for people your age, what would it teach?' 
+      ] },
       { id: 'trust', label: 'Trust & Information', intro: 'Generated text, images and video make it harder to know what is real. How do we decide what to believe?', qs: [
-        'Describe a time you weren’t sure whether something online was made by a person or an AI. What did you do?',
-        'Who should be responsible when an AI system gives wrong or harmful information?',
-        'How can scientists and educators help the public judge AI-generated claims?' ] },
+        'AI and human outputs are increasingly hard to differentiate. Is this problematic? And if so, why and what could or should be done to help solve the problem?',
+        ' Who should be responsible when an AI system gives wrong or harmful information?',
+        'What skills are needed to judge AI-generated claims? What role should educators or scientists play in interpreting claims or generating skills for the general public?',
+        // 'Describe a time you weren’t sure whether something online was made by a person or an AI. What did you do?',
+        // 'Who should be responsible when an AI system gives wrong or harmful information?',
+        // 'How can scientists and educators help the public judge AI-generated claims?' 
+      ] },
       { id: 'work', label: 'Work & Opportunity', intro: 'AI is changing how research, engineering and everyday jobs get done. Who benefits, and who might be left out?', qs: [
-        'Which careers you care about will look most different in ten years because of AI?',
-        'What should stay a human decision, even if a machine could make it faster?',
-        'How can we make sure communities with fewer resources share in AI’s benefits?' ] },
+        'Which careers do you think will look most different in ten years because of AI?',
+        'How do you feel AI will change the world of work? What are the hopes and concerns you have for these changes?',
+        'Are there ways to make sure AI does not increase inequalities?'
+        // 'Which careers you care about will look most different in ten years because of AI?',
+        // 'What should stay a human decision, even if a machine could make it faster?',
+        // 'How can we make sure communities with fewer resources share in AI’s benefits?' 
+      ] },
       { id: 'create', label: 'Creativity & Ownership', intro: 'Machines can now write, draw and compose. What does that mean for human creativity and credit?', qs: [
         'If an AI helps you make something, whose work is it?',
-        'Does using AI make creative work more accessible, or less meaningful? Why?',
-        'What would a fair agreement between artists and AI developers look like?' ] },
+        'In what ways does AI limit creativity? In what way does it augment it?',
+        'What would a fair agreement between artists, writers, and other creators and AI developers look like?'
+        // 'If an AI helps you make something, whose work is it?',
+        // 'Does using AI make creative work more accessible, or less meaningful? Why?',
+        // 'What would a fair agreement between artists and AI developers look like?' 
+      ] },
       { id: 'science', label: 'AI in Science', intro: 'From predicting protein structures to designing aircraft, AI is accelerating discovery. What changes about how science is done?', qs: [
         'What is one scientific problem you would most want AI to help solve?',
-        'How should scientists explain results that come from systems they can’t fully interpret?',
-        'What should the public know about how AI is used in research?' ] }
+        'How should scientists approach results that come from systems they can’t fully interpret? Is it important that these results should be reproducible?',
+        'What should the public know about how AI is used in research?'        
+        // 'What is one scientific problem you would most want AI to help solve?',
+        // 'How should scientists explain results that come from systems they can’t fully interpret?',
+        // 'What should the public know about how AI is used in research?' 
+      ] },
+      { id: 'science', label: 'Responsibility & Ethics', intro: 'When an AI system makes a mistake, misleads someone or treats people unfairly, who is responsible: the builders, the users or the system itself? What rules should guide how AI is built and used?', qs: [
+        'What are the key parts of responsible use of AI, in your opinion?',
+        'What should stay a human decision, even if a machine could make it faster?',
+        'How might AI use today affect the choices of people in the future (e.g. environmental impacts, knowledge base independent of AI, human-centered control)? Are there things that should or should not be done today to safeguard the rights of people in the future?'
+        // 'What is one scientific problem you would most want AI to help solve?',
+        // 'How should scientists explain results that come from systems they can’t fully interpret?',
+        // 'What should the public know about how AI is used in research?' 
+      ] }      
     ];
   var sel = 'background: #033C5A; color: #FFFFFF; border: 1px solid #033C5A; border-radius: 999px; padding: 12px 20px; font-weight: 600; font-size: 15px; cursor: pointer; min-height: 44px';
   var unsel = 'background: #FFFFFF; color: #00223E; border: 1px solid #CDBF9F; border-radius: 999px; padding: 12px 20px; font-weight: 500; font-size: 15px; cursor: pointer; min-height: 44px';
